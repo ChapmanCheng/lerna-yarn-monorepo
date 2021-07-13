@@ -4,3 +4,5 @@
     `$ <yarn> lerna clean`
 -   add a library to a project within the monorepo  
     `$ <yarn> lerna add <repo-library> --scope <target-project>`
+-   npm script (build, start, deploy ... )  
+    `$ yarn workspace <package> <script>`
