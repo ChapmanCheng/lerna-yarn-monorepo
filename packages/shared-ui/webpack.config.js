@@ -30,6 +30,7 @@ module.exports = {
 	},
 
 	resolve: {
+		// Require to resolve filetypes such as JSX
 		extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
 	},
 	plugins: [],
