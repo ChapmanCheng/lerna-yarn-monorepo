@@ -3,13 +3,15 @@ import "./App.css";
 import sharedUI from "shared-ui";
 
 function App() {
-	const { Button, Header } = sharedUI;
-  return (
-    <div className="App">
-      <Header />
-      <Button />
-    </div>
-  );
+	console.log(sharedUI);
+	const { Button, Header, ButtonJSX } = sharedUI;
+	return (
+		<div className="App">
+			<Header />
+			<Button />
+			<ButtonJSX />
+		</div>
+	);
 }
 
 export default App;
