@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import sharedUI from 'shared-ui'
+import logo from "./logo.svg";
+import "./App.css";
+import sharedUI from "shared-ui";
 
 function App() {
-  const {Button, Header} = sharedUI
+	const { Button, Header } = sharedUI;
   return (
     <div className="App">
       <Header />
