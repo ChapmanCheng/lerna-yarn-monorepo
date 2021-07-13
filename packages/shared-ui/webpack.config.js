@@ -1,5 +1,5 @@
-const path = require('path')
-const nodeExternals = require('webpack-node-externals')
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 module.exports = {
     mode: "development",
 
@@ -14,9 +14,9 @@ module.exports = {
             type: "umd",
             export: "default",
             auxiliaryComment: "this is a auxiliary comment",
-            umdNamedDefine: true            
+			umdNamedDefine: true,
         },
-        clean: true
+		clean: true,
     },
 
     module: {
@@ -30,5 +30,5 @@ module.exports = {
     },
     plugins: [],
 
-    externals: [nodeExternals()]
-}
+	externals: [nodeExternals()],
+};
