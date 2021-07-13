@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import sharedUI from "shared-ui";
+// ! require *.d.ts typescript file for intellisense
 
 function App() {
 	console.log(sharedUI);
