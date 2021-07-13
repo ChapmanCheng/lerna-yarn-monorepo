@@ -22,17 +22,17 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(ts|tsx|m?js|jsx)$/,
+				test: /\.m?(js|jsx)?$/,
 				exclude: /node_modules/,
-				use: ["babel-loader", "ts-loader"],
+				use: "babel-loader",
 			},
 		],
 	},
 
 	resolve: {
-		extensions: [".tsx", ".ts", ".jsx", ".js"],
+		// Require to resolve filetypes such as JSX
+		extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
 	},
-
 	plugins: [],
 
 	externals: [nodeExternals()],
