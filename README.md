@@ -1,3 +1,5 @@
+# Lerna Yarn workspace for React Projects
+
 -   Bootstrap the packages in the current Lerna repo  
     `$ <yarn> lerna bootstrap`
 -   clean all packages ./node_modules/  
@@ -24,3 +26,9 @@ function YourComponent () {
     );
 };
 ```
+
+## Supported CSS 
+- #### normal CSS      `import "./path/to/file.css";` 
+- #### CSS module    `import style from "./path/to/index.module.css";`
+- #### SASS __TBC__
+- #### PostCSS __TBC__
