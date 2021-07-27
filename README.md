@@ -1,8 +1,26 @@
--   ### Bootstrap the packages in the current Lerna repo  
+-   Bootstrap the packages in the current Lerna repo  
     `$ <yarn> lerna bootstrap`
--   ### clean all packages ./node_modules/  
+-   clean all packages ./node_modules/  
     `$ <yarn> lerna clean`
--   ### add a library to a project within the monorepo  
+-   add a library to a project within the monorepo  
     `$ <yarn> lerna add <repo-library> --scope <target-project>`
--   ### npm script (build, start, deploy ... )  
+-   npm script (build, start, deploy ... )  
     `$ yarn workspace <package> <script>`
+
+
+## import the _"shared-ui"_ library
+
+1.  Import module and css file;  
+1.  destructure the required component
+```
+import sharedUI from "shared-ui";  
+import "shared-ui/dist/index.css";
+
+function YourComponent () {
+    const { Button, Header, ButtonJSX, ButtonTS } = sharedUI;
+
+    return ( 
+        // rest
+    );
+};
+```
