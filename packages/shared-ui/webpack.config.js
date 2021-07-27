@@ -5,10 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = () => {
 	const sourceMap = process.env.NODE_ENV === "development" ? true : false;
 
-	// ! still not working perfectly
-
 	return {
-		mode: "development",
+		mode: process.env.NODE_ENV,
 		entry: "./src/index.js",
 
 		output: {
