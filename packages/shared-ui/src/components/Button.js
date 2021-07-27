@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import "./Button.css";
 
 export default function Button() {
-    return (
-        <button>Button within</button>
-    )
+	return <button class="blue-btn">Button within</button>;
 }
