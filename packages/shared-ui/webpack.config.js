@@ -52,7 +52,7 @@ module.exports = () => {
 				},
 			],
 		},
-		plugins: [new MiniCssExtractPlugin({ filename: "[name].css" })],
+		plugins: [new MiniCssExtractPlugin({})],
 		resolve: {
 			// Require to resolve filetypes such as JSX
 			extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
