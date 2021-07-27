@@ -8,6 +8,8 @@ module.exports = () => {
 	return {
 		mode: process.env.NODE_ENV,
 		entry: "./src/index.js",
+		target: "node",
+		externalsPresets: { node: true },
 
 		output: {
 			filename: "index.js",
@@ -56,6 +58,10 @@ module.exports = () => {
 			extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
 		},
 
-		externals: [nodeExternals()],
+		externals: [
+			nodeExternals({
+				additionalModuleDirs: ["./../../node_modules"],
+			}),
+		],
 	};
 };
