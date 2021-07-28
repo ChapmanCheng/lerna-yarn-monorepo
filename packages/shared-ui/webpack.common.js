@@ -56,10 +56,13 @@ module.exports = () => {
 			extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
 		},
 
-		externals: [
-			nodeExternals({
-				additionalModuleDirs: ["./../../node_modules"],
-			}),
-		],
+		// externals: [
+		// 	nodeExternals({
+		// 		additionalModuleDirs: ["./../../node_modules"],
+		// 	}),
+		// ],
+		externals: {
+			react: "react",
+		},
 	};
 };
