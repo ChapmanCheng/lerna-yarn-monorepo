@@ -9,12 +9,19 @@ module.exports = () => {
 	};
 
 	return {
-		entry: "./src/index.js",
+		entry: {
+			index: "./src/index.js",
+			components: "./src/components/",
+			enum: "./src/enum/",
+		},
 		target: "node",
 		externalsPresets: { node: true },
 
 		output: {
-			filename: "index.js",
+			filename: (pathData) => {
+				if (pathData.chunk.name === "index") return "[name].js";
+				else return "[name]/index.js";
+			},
 			path: path.resolve(__dirname, "..", "dist"),
 			library: {
 				name: libName,
