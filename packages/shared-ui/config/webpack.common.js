@@ -1,7 +1,6 @@
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { libName } = require("./webpack.settings");
+const { libName } = require("./var");
 
 module.exports = () => {
 	const miniCssExtractOptions = {
@@ -16,7 +15,7 @@ module.exports = () => {
 
 		output: {
 			filename: "index.js",
-			path: path.resolve(__dirname, "dist"),
+			path: path.resolve(__dirname, "..", "dist"),
 			library: {
 				name: libName,
 				type: "umd",
@@ -56,11 +55,6 @@ module.exports = () => {
 			extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
 		},
 
-		// externals: [
-		// 	nodeExternals({
-		// 		additionalModuleDirs: ["./../../node_modules"],
-		// 	}),
-		// ],
 		externals: {
 			react: "react",
 		},
