@@ -1,6 +1,8 @@
-const config = require("./webpack.common");
+const common = require("./webpack.common");
 
 module.exports = () => {
+	const config = common();
+
 	const [, cssRule] = config.module.rules;
 	const [, cssLoader, sassLoader] = cssRule.use;
 
