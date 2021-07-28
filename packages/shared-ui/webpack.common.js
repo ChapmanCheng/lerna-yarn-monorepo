@@ -1,11 +1,13 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { libName } = require("./webpack.settings");
 
 module.exports = () => {
-	const libName = "shared-ui";
-
-	const miniCssExtractOptions = { filename: `${libName}.css` };
+	const miniCssExtractOptions = {
+		filename: `${libName}.css`,
+		chunkFilename: `[id].${libName}.css`,
+	};
 
 	return {
 		entry: "./src/index.js",
