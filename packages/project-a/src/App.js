@@ -1,6 +1,6 @@
 import "./App.css";
 import sharedUI from "shared-ui";
-import "shared-ui/dist/main.css";
+import "shared-ui/dist/shared-ui.css";
 // ! require *.d.ts typescript file for intellisense
 
 function App() {
