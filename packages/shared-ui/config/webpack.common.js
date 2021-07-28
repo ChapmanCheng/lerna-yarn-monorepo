@@ -11,8 +11,8 @@ module.exports = () => {
 	return {
 		entry: {
 			index: "./src/index.js",
-			components: "./src/components/",
-			enum: "./src/enum/",
+			// components: "./src/components/",
+			// enum: "./src/enum/",
 		},
 		target: "node",
 		externalsPresets: { node: true },
@@ -26,7 +26,6 @@ module.exports = () => {
 			library: {
 				name: libName,
 				type: "umd",
-				export: "default",
 				umdNamedDefine: true,
 			},
 			clean: true,
