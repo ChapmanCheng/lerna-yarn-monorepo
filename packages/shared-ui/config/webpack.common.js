@@ -1,8 +1,9 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { libName } = require("./var");
 
 module.exports = () => {
+	const libName = process.env.npm_package_name;
+
 	const miniCssExtractOptions = {
 		filename: `${libName}.css`,
 		chunkFilename: `[id].${libName}.css`,

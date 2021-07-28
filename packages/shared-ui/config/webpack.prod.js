@@ -1,10 +1,10 @@
 const common = require("./webpack.common");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { libName } = require("./var");
 
 module.exports = () => {
 	const config = common();
+	const libName = process.env.npm_package_name;
 
 	config.plugins.forEach((plugin) => {
 		if (plugin instanceof MiniCssExtractPlugin) {
