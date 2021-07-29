@@ -60,13 +60,26 @@ module.exports = () => {
       ],
     },
     plugins: [new MiniCssExtractPlugin(miniCssExtractOptions)],
-    resolve: {
-      // Require to resolve filetypes such as JSX
-      extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
-    },
+    resolve: { extensions: [".js", ".ts", ".jsx", ".tsx", ".json"] }, // Require to resolve filetypes such as JSX
 
     externals: {
       react: "react",
+    },
+
+    // * settings base on https://github.com/webpack-contrib/mini-css-extract-plugin#extracting-all-css-in-a-single-file
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          default: false,
+          styles: {
+            name: "styles",
+            type: "css/mini-extract",
+            chunks: "all",
+            reuseExistingChunk: true,
+            enforce: true
+          }
+        }
+      }
     },
   };
 };
