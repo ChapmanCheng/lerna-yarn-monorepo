@@ -40,17 +40,19 @@ module.exports = () => {
         {
           test: /\.(m?js|jsx|ts|tsx)$/,
           exclude: /node_modules/,
-          use: ["babel-loader", "ts-loader"],
+          use: [
+            "babel-loader",
+            {
+              loader: "ts-loader",
+              options: { configFile: path.resolve("config", "tsconfig.json") },
+            },
+          ],
         },
         {
           test: /\.s?[a|c]ss$/i,
           use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-            },
-            {
-              loader: "css-loader",
-            },
+            { loader: MiniCssExtractPlugin.loader },
+            { loader: "css-loader" },
             {
               loader: "sass-loader",
               options: { implementation: require("sass") },
@@ -76,10 +78,10 @@ module.exports = () => {
             type: "css/mini-extract",
             chunks: "all",
             reuseExistingChunk: true,
-            enforce: true
-          }
-        }
-      }
+            enforce: true,
+          },
+        },
+      },
     },
   };
 };
