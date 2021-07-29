@@ -2,14 +2,18 @@
 	"name": "shared-ui",
 	"version": "1.0.0",
 	"description": "a shared ui library",
-	"main": "dist/index.js",
+	"main": "./dist",
+	"exports": {
+		"./": "./dist/index.js",
+		"./components": "./dist/components"
+	},
 	"license": "UNLICENSED",
 	"private": true,
 	"scripts": {
 		"build": "npm run build:dev",
 		"build:prod": "webpack --config ./config/webpack.prod.js",
 		"build:dev": "webpack --config ./config/webpack.dev.js",
-		"declare": "tsc src/**/* --declaration --emitDeclarationOnly --allowJs --outDir dist"
+		"declare": "tsc --project config/tsconfig.declare.json"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.6",
