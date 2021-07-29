@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const writeEntries = require("./helper/writeEntries");
+const regex = require("./helper/regex");
 
 module.exports = () => {
   const libName = process.env.npm_package_name;
@@ -38,7 +39,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.(m?js|jsx|ts|tsx)$/,
+          test: regex.js,
           exclude: /node_modules/,
           use: [
             "babel-loader",
@@ -49,7 +50,7 @@ module.exports = () => {
           ],
         },
         {
-          test: /\.s?[a|c]ss$/i,
+          test: regex.css,
           use: [
             { loader: MiniCssExtractPlugin.loader },
             { loader: "css-loader" },

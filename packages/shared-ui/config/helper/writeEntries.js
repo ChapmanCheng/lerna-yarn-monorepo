@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const regex = require('./regex')
 
 const readdirOption = { withFileTypes: true };
 const src = "src/";
@@ -8,7 +9,7 @@ module.exports = function writeEntries(srcPath, entry) {
   fs.readdirSync(srcPath, readdirOption)
     .sort((dirent) => (dirent.isDirectory() ? 1 : -1))
     .forEach((dirent) => {
-      if (dirent.isFile() && dirent.name.match(/[t|j]sx?$/) !== null) {
+      if (dirent.isFile() && dirent.name.match(regex.js) !== null) {
         const ext = path.extname(dirent.name);
         const relativePath = path.relative(
           process.cwd(),
